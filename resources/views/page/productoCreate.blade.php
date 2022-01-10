@@ -35,7 +35,7 @@
                                 <div class=" col-lg-6">
                                     <div class="form-group mb-4">
                                         <label class="form-label">Categoria*</label>
-                                        <select id="choices-multiple-remove-button" placeholder="Selecione categoria" name="categoria[]" multiple>
+                                        <select id="choices-multiple-remove-button" placeholder="Selecione categoria" name="categoria[]" multiple required>
                                             @foreach ($categorias as $categoria)
                                                 <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
                                             @endforeach

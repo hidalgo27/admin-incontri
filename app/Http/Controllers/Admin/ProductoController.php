@@ -41,11 +41,13 @@ class ProductoController extends Controller
                 $producto->imagen=$destinationPath."/".$filename;
             }
             if($producto->save()){
-                foreach ($request->input('categoria') as $categoria){
-                    $productoCategoria=new TProductoCategoria();
-                    $productoCategoria->id_producto=$producto->id;
-                    $productoCategoria->id_categoria=$categoria;
-                    $productoCategoria->save();
+                if($request->input('categoria')){
+                    foreach ($request->input('categoria') as $categoria){
+                        $productoCategoria=new TProductoCategoria();
+                        $productoCategoria->id_producto=$producto->id;
+                        $productoCategoria->id_categoria=$categoria;
+                        $productoCategoria->save();
+                    }
                 }
             }
             return redirect(route('index_producto'))->with('status', 'Producto creado exitosamente');

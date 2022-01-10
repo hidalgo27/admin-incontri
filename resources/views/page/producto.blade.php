@@ -23,7 +23,7 @@
     @endif
     <div class="row justify-content-between">
         <div class="col-lg-12">
-            <a href="add_product.html" class="add-btn hover-btn">Agregar nuevo</a>
+            <a href="{{route('create_producto')}}" class="add-btn hover-btn">Agregar nuevo</a>
         </div>
         <div class="col-lg-12 col-md-12">
             <div class="card card-static-2 mt-30 mb-30">
